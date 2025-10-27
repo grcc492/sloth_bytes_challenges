@@ -31,13 +31,14 @@ def finish_all(total_jobs, dependents):
 
 
 if __name__ == "__main__":
-    job_list = [
+    job_list = (
         (2, [(1, 0)]),
         (2, [(1, 0), (0, 1)]),
         (3, [(1, 0), (2, 1)]),
         (1, []),
         (11, [(6, 10), (4, 3), (9, 2), (2, 3), (6, 1), (2, 8), (10, 1), (10, 2), (5, 3), (0, 10), (7, 4), (6, 1)]),
-    ]
+        (11, [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]]),
+    )
     for total_jobs, dependents in job_list:
         output = finish_all(total_jobs, dependents)
         print(f"output = {output}")
